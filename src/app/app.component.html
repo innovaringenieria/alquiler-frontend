@@ -1,0 +1,55 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        >
+      <mat-toolbar color="primary" >Menu</mat-toolbar>
+      <mat-nav-list >
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Empleados
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/employees" (click)="drawer.toggle()">Mantener</a>
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Carros
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/cars" (click)="drawer.toggle()">Mantener</a>
+          <a mat-list-item routerLink="/cars/in-use" (click)="drawer.toggle()">En uso</a>
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Viajes
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/trips" (click)="drawer.toggle()">Mantener</a>
+          <a mat-list-item routerLink="/viajes/realizadas" (click)="drawer.toggle()">Realizadas</a>
+        </mat-expansion-panel>
+      </mat-nav-list>
+      
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span> ALQUILER DE VEHICULOS</span>
+
+        <app-login style="padding: 20px;margin: 20px;"></app-login>
+      </mat-toolbar> 
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+<router-outlet></router-outlet>

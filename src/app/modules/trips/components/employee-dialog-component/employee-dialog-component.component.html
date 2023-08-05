@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Seleccione un empleado</h1>
+<div mat-dialog-content>
+  <mat-list>
+    <mat-list-item *ngFor="let employee of employees" (click)="selectEmployee(employee)">
+      {{employee.name}}
+    </mat-list-item>
+  </mat-list>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cerrar</button>
+</div>
